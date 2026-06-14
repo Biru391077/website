@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiRu's Home Page</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav class="nav-menu">
+        <a href="#" aria-current="page">Home</a>
+        <a href="#about-me">About Me</a>
+        <a href="#">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <h1 id="main-title">Welcome to BiRu's Profile</h1>
+
+    <div class="content-wrapper">
+        <div class="card">
+            <h2>My Profile</h2>
+            <p>
+                Hello! I'm Bidur Rupakheti or short BiRu, a student with a passion for technology and web development.
+                I enjoy learning new skills, building creative projects, and exploring how technology can solve real-world problems.
+                This website showcases my profile, skills, and projects as I continue my journey in the field of computer science and web development.
+
+            </p>
+        </div>
+
+        <div class="card">
+            <h3 class="h1">Beard Lover </h3>
+            </h2>
+            <p>
+                Here's a picture of me: <br>
+                <a href="https://ibb.co/PGJHdBZs"><img src="https://i.ibb.co/chRnjzcK/Bi-Ru.jpg" alt="Bi-Ru" border="0"></a>
+                
+            </p>
+        </div>
+
+        <div class="card" id="about-me">
+            <h2>My Hobbies & Gallery</h2>
+            
+            <div class="gallery">
+                <div id="hobby-text" class="box" style="margin-bottom: 15px;"><p>I enjoy Life.</p></div>
+                 <img id="gallery-img" src="https://i.ibb.co/chRnjzcK/Bi-Ru.jpg" alt="Hobby Image">
+                
+                <br>
+                <button id="next-btn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <h2 id="contact">Leave a Message</h2>
+    <form>
+        <label>Name:</label>
+        <input type="text" placeholder="Your name" />
+        <br />
+        <label>Email: </label>
+        <input type="email" placeholder="Your email" value="your@gmail.com" />
+        <label>Message: </label>
+        <br />
+        <textarea rows="5" cols="50" placeholder="Say anything..."></textarea>
+        <br />
+        <button type="submit">Send Message</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
