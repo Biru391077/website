@@ -41,13 +41,12 @@ nextBtn.addEventListener("click", function () {
 const themeButton = document.getElementById("theme-toggle");
 
 themeButton.addEventListener("click", function () {
+    // Changed "dark-mode" to "dark-theme" to perfectly match your CSS variables
+    document.body.classList.toggle("dark-theme");
 
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
+    if (document.body.classList.contains("dark-theme")) {
         themeButton.textContent = "☀️ Light Mode";
     } else {
         themeButton.textContent = "🌙 Dark Mode";
     }
-
 });

@@ -1,181 +1,266 @@
-/* General Page Styling */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f7f6;
-    color: #333;
-    transition: 0.3s;
+/* ==========================================================================
+   1. Theme Variables & Global Styles
+   ========================================================================== */
+:root {
+    /* Light Mode colors (Default) */
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --accent-color: #2b7a78;
+    --border-color: #cccccc;
+    --nav-bg: #1a1a1a;
+    --nav-text: #ffffff;
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
 }
 
-/* Navigation Menu */
+body.dark-theme {
+    /* Dark Mode colors */
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --accent-color: #3fe0d0;
+    --border-color: #444444;
+    --nav-bg: #000000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-bottom: 40px;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* ==========================================================================
+   2. Navigation Menu
+   ========================================================================== */
 .nav-menu {
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 20px;
-    background-color: #222;
+    background-color: var(--nav-bg);
     padding: 15px;
-    border-radius: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color var(--transition-speed);
 }
 
 .nav-menu a {
-    color: white;
+    color: var(--nav-text);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    transition: color var(--transition-speed);
 }
 
-.nav-menu a:hover {
-    color: #00bfff;
+.nav-menu a:hover, 
+.nav-menu a[aria-current="page"] {
+    color: #3fe0d0;
 }
 
-/* Theme Toggle Button */
 #theme-toggle {
-    display: block;
-    margin: 15px auto;
-    padding: 10px 20px;
-    border: none;
-    background-color: #0077cc;
-    color: white;
-    border-radius: 6px;
+    background: none;
+    border: 1px solid var(--nav-text);
+    color: var(--nav-text);
+    padding: 5px 12px;
+    border-radius: 20px;
     cursor: pointer;
+    font-size: 0.9rem;
+    transition: background var(--transition-speed);
 }
 
 #theme-toggle:hover {
-    background-color: #005fa3;
+    background: rgba(255, 255, 255, 0.1);
 }
 
-/* Main Title */
+/* ==========================================================================
+   3. Main Vertical Layout (Original HTML Order)
+   ========================================================================== */
 #main-title {
     text-align: center;
-    margin: 30px 0;
-    color: #222;
+    margin: 40px 20px 20px;
+    color: var(--accent-color);
+    transition: color var(--transition-speed);
 }
 
-/* Flexbox Layout */
 .content-wrapper {
+    max-width: 600px; /* Streamlines everything cleanly into a single vertical column */
+    margin: 0 auto;
+    padding: 20px;
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 25px;
 }
 
-/* Cards */
-.profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card h2, .card h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* ==========================================================================
+   4. Circular Profile Picture Layout
+   ========================================================================== */
+.card img[alt="Bi-Ru"] {
+    width: 180px;
+    height: 180px;
     object-fit: cover;
-    margin-top: 10px;
+    border-radius: 50%; /* Perfect circle */
+    border: 4px solid var(--accent-color);
+    display: block;
+    margin: 15px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: border-color var(--transition-speed);
 }
 
-/* Profile Image (Circle) */
-.profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: 10px;
+.card p {
+    text-align: center;
 }
 
-/* Hobby Gallery Image (Mobile Style Rectangle) */
-#gallery-img {
-    width: 220px;
-    height: 380px;
-    border-radius: 20px;
-    object-fit: contain;
-    background-color: white;
-    border: 5px solid #ccc;
-}
-
-
-
-
-/* Gallery Layout */
+/* ==========================================================================
+   5. Hobby Gallery (Photo Size Reduced & Optimized)
+   ========================================================================== */
 .gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Button */
-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    border: none;
-    background-color: #0077cc;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #005fa3;
-}
-
-/* Form */
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-input,
-textarea {
+#hobby-text {
     width: 100%;
+    text-align: center;
+    font-weight: 600;
+    background: rgba(43, 122, 120, 0.1);
     padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
+    border-radius: 8px;
 }
 
-/* Contact Title */
+body.dark-theme #hobby-text {
+    background: rgba(63, 224, 208, 0.1);
+}
+
+/* Reduced size constraints for the gallery photo */
+#gallery-img {
+    width: 85%;              /* Takes up 85% of the card container instead of 100% */
+    max-width: 320px;        /* Limits absolute maximum width so it stays compact */
+    height: auto;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px auto;
+    display: block;
+}
+
+#next-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background var(--transition-speed);
+}
+
+#next-btn:hover {
+    background-color: #1f5f5d;
+}
+
+/* Mobile portrait layout optimization */
+@media (max-width: 480px) and (orientation: portrait) {
+    .content-wrapper {
+        padding: 10px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+
+    #gallery-img {
+        width: 90%;          /* Sized beautifully for mobile viewports */
+        aspect-ratio: 4 / 5; /* Maintains a clean portrait aspect ratio */
+    }
+}
+
+/* ==========================================================================
+   6. Contact Form Styling
+   ========================================================================== */
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 40px auto;
+    max-width: 600px;
+}
+
 #contact {
     text-align: center;
-    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .content-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 90%;
-    }
+form {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: background-color var(--transition-speed);
 }
-.dark-mode {
-    background-color: #121212;
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    background-color: var(--accent-color);
     color: white;
-}
-
-.dark-mode .card {
-    background-color: #1e1e1e;
-    color: white;
-}
-
-.dark-mode .nav-menu {
-    background-color: black;
-}
-
-.dark-mode #main-title {
-    color: white;
-}
-
-.dark-mode form {
-    background-color: #1e1e1e;
-    color: white;
-}
-
-.dark-mode input,
-.dark-mode textarea {
-    background-color: #333;
-    color: white;
-    border: 1px solid #555;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background var(--transition-speed);
 }
