@@ -1,6 +1,6 @@
 const hobbies = [
     {
-        text: "Enjoying Vibe.",
+        text: "Enjoying Life.",
         image: "https://i.ibb.co/chRnjzcK/Bi-Ru.jpg"
     },
     {
