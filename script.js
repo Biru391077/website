@@ -1,22 +1,22 @@
 const hobbies = [
     {
-        text: "I enjoy Life.",
+        text: "Enjoying Vibe.",
         image: "https://i.ibb.co/chRnjzcK/Bi-Ru.jpg"
     },
     {
-        text: "I love listening to music.",
+        text: "Favourite music.",
         image: "https://www.image2url.com/r2/default/images/1781430802401-375151e5-b88d-42c3-91dd-ab00e73c0100.png"
     },
     {
-        text: "I enjoy playing cricket.",
+        text: "Favourite sport cricket.",
         image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=500"
     },
     {
-        text: "I love watching Sci-Fi movies and series.",
+        text: "Favourite Movie.",
         image: "https://www.image2url.com/r2/default/images/1781338552345-09053b96-f9d0-4fe5-ba1d-a0e9448819bf.png"
     },
     {
-        text: "I love Writing.",
+        text: "One of My Poems.",
         image: "https://www.image2url.com/r2/default/images/1781338233461-10a1b4f0-b667-412b-b95f-bfa46588b49d.jpg"
     }
 ];
