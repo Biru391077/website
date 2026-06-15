@@ -264,3 +264,26 @@ form button[type="submit"] {
     margin-top: 20px;
     transition: background var(--transition-speed);
 }
+/* --- Footer Styling & Highlight --- */
+.main-footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    font-size: 0.95rem;
+    
+    /* Highlight effect: Dynamic gradient top border */
+    border-top: 4px solid;
+    border-image: linear-gradient(to right, #007bc4, #00dfa2, #007bc4) 1;
+    
+    /* Background tint to separate it from the main page */
+    background: rgba(0, 0, 0, 0.02);
+    color: #07e02b;
+}
+
+/* --- Dark Mode adjustments for the highlighted footer --- */
+body.dark-mode .main-footer {
+    background: rgba(255, 255, 255, 0.03);
+    color: #ccc;
+    /* Brighter gradient highlight for dark theme */
+    border-image: linear-gradient(to right, #ff007f, #7f00ff, #ff007f) 1;
+}
