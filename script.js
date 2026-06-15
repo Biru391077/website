@@ -4,7 +4,7 @@ const hobbies = [
         image: "https://i.ibb.co/chRnjzcK/Bi-Ru.jpg"
     },
     {
-        text: "Favourite music.",
+        text: "Favourite song.",
         image: "https://www.image2url.com/r2/default/images/1781430802401-375151e5-b88d-42c3-91dd-ab00e73c0100.png"
     },
     {
